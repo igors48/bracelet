@@ -34,7 +34,8 @@ public class App
                 }
             });
             // https://www.codeproject.com/Tips/801262/Sending-and-receiving-strings-from-COM-port-via-jS
-            boolean result = port.writeString("Hurrah!");
+            byte[] bytes = {48, 42};
+            boolean result = port.writeBytes(bytes);
             System.out.println("###Result " + result);
         } catch (SerialPortException e) {
             throw new RuntimeException(e);
